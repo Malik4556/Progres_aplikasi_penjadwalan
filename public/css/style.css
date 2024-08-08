@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #fafbfe; /* Warna latar belakang terang */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+}
+
+#sidebar {
+    width: 260px;
+    min-width: 260px;
+    height: 100vh;
+    z-index: 1000;
+    transition: all 0.25s ease-in-out;
+    background-color: #ffffff; /* Warna putih untuk sidebar */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+.sidebar-logo {
+    max-height: 50px;
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #000000;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #000000;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i {
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(10, 154, 243, 0.075);
+    border-left-color: #007bff;
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+.sidebar-item .sidebar-dropdown {
+    padding-left: 1.25rem;
+}
+
+.sidebar-item .sidebar-dropdown .sidebar-link {
+    padding-left: 0.75rem;
+}
+
+.sidebar-footer .sidebar-link {
+    color: #000000;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.sidebar-footer .sidebar-link:hover {
+    background-color: rgba(10, 154, 243, 0.075);
+}
+
+.navbar-light .navbar-brand {
+    color: #000000;
+    font-weight: 600;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000000;
+}
+
+.navbar {
+    background-color: #ffffff !important; /* Warna putih untuk navbar */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-logo {
+    max-height: 50px;
+    margin: auto 0;
+    position: relative;
+}
+
+.sidebar-logo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background-color: #007bff;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+/* Tambahan untuk latar belakang abu-abu */
+.bg-gray {
+    background-color: #fff;
+    /* background-color: #d3d3d3;  */
+}
+
+
+/* Card add */
+.thin-card-header {
+    padding-top: 0.10rem;
+    padding-bottom: 0.10rem;
+}
+
+/* Card Delete */
+.card {
+    border: 1px solid #A9A9A9;
+
+}
+
+/* Form control */
+.thick-border {
+    border: 1px solid #A9A9A9;
+}
+
+/* Boder hr */
+.thick-hr {
+    border: 1px solid #696969;
+}
+
+/* Table styles */
+.custom-table {
+    background-color: #ffffff; /* Warna latar belakang tabel */
+    color: #333333; /* Warna teks tabel */
+    border: 1px solid #dee2e6; /* Warna border tabel */
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 0.50rem;
+    text-align: center;
+}
+
+.custom-table th {
+    /* background-color: #808080; */
+    color: #333333;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.custom-table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.custom-table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: #0d6efd; /* Warna latar belakang header */
+    z-index: 1; /* Prioritas z-index */
+}
+
+.sticky-header th {
+    background-color: 00C0EF; /* Warna latar belakang header */
+    color: white; /* Warna teks header */
+}
+
+/* .table-responsive {
+    overflow-x: auto;
+} */
+
+/* Add overflow property to make content scrollable */
+/* .content-container {
+    overflow-y: auto;
+    height: calc(100vh - 60px); Adjust height to allow for navbar */
+    /* padding: 20px;
+} */
+
+/* Button styles */
+/* .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+} */
+
+
